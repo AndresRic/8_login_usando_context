@@ -1,0 +1,38 @@
+.inputContainer{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    margin: 20px 0px;
+    border-bottom: 2px solid white;
+}
+
+.inputIconoContainer{
+    height: 100%;
+    margin-right: 10px;
+}
+
+.icono{
+    height: 100%;
+}
+
+.inputText{
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+
+}
+
+.inputText:focus{
+    outline: none;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.inputText:active{
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+}

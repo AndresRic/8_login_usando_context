@@ -1,0 +1,18 @@
+.submitButton{
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.2);
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.submitButton:hover{
+    background-color: rgb(255, 255, 255, 0.3);
+}
+
+.submitButton:active{
+    background-color: rgb(255, 255, 255, 0.6);
+}

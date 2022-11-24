@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
+import { Routes, Route } from "react-router-dom";
+import { UserInfo } from "./pages/UserInfo";
+import styles from "./App.module.css";
+import { UserProvider } from "./context/UserContext";
+
+const demoUser = {
+	id: 1,
+	name: "ricardo",
+	lasName: "muñoz",
+	age: 34,
+	genre: "male",
+	email: "ricardo@google.com",
+	password: "12345",
+	pet: {
+		especie: "perro",
+		raza: "golden retriever",
+		edad: 7,
+	},
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+	return (
+		<UserProvider value={null}>
+			<Routes>
+				<Route path="/" element={<Login />} />
+				<Route path="/home" element={<Home />} />
+				<Route path="/userinfo" element={<UserInfo />} />
+				<Route path="*" element={<Home />} />
+			</Routes>
+		</UserProvider>
+	);
 }
 
-export default App
+export default App;
